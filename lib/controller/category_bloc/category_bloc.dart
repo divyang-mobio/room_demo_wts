@@ -11,8 +11,10 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     on<GetCategory>((event, emit) async {
       emit(CategoryLoading());
       await Future.delayed(const Duration(seconds: 1));
-      emit(
-          CategoryLoaded(data: listName(event.item), productValue: event.item));
+      emit(CategoryLoaded(
+          data: listName(event.item),
+          productValue: event.item,
+          dropDownValue: event.dropDownValue));
     });
   }
 }

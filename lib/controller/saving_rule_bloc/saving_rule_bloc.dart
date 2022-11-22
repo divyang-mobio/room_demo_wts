@@ -6,14 +6,15 @@ part 'saving_rule_event.dart';
 
 part 'saving_rule_state.dart';
 
-class SavingRuleBloc
-    extends Bloc<SavingRuleEvent, SavingRuleState> {
+class SavingRuleBloc extends Bloc<SavingRuleEvent, SavingRuleState> {
   SavingRuleBloc() : super(SavingRuleInitial()) {
     on<GetSavingRule>((event, emit) async {
       emit(SavingRuleLoading());
       await Future.delayed(const Duration(seconds: 1));
       emit(SavingRuleLoaded(
-          data: listNames(event.item), categoryValue: event.item));
+          data: listNames(event.item),
+          categoryValue: event.item,
+          dropDownValue: event.dropDownValue));
     });
 
     on<CategoryChange>((event, emit) async {

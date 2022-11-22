@@ -4,8 +4,9 @@ abstract class SavingRuleEvent {}
 
 class GetSavingRule extends SavingRuleEvent {
   String item;
+  String? dropDownValue;
 
-  GetSavingRule({required this.item});
+  GetSavingRule({required this.item, this.dropDownValue});
 }
 
 class CategoryChange extends SavingRuleEvent {}

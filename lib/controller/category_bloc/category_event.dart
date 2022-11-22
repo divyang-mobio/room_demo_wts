@@ -4,6 +4,7 @@ abstract class CategoryEvent {}
 
 class GetCategory extends CategoryEvent {
   String item;
+  String? dropDownValue;
 
-  GetCategory({required this.item});
+  GetCategory({required this.item, this.dropDownValue});
 }

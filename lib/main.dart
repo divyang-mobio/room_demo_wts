@@ -4,6 +4,7 @@ import 'package:room_demo_wts/controller/category_bloc/category_bloc.dart';
 import 'package:room_demo_wts/screens/safe_screen.dart';
 
 import 'controller/get_saving_rule_data_bloc/get_saving_rule_data_bloc.dart';
+import 'controller/safe_screen_bloc/safe_screen_bloc.dart';
 import 'controller/saving_rule_bloc/saving_rule_bloc.dart';
 
 void main() => runApp(const MyApp());
@@ -71,6 +72,9 @@ class RouteGenerator {
                         create: (context) => SavingRuleBloc()),
                     BlocProvider<GetSavingRuleDataBloc>(
                         create: (context) => GetSavingRuleDataBloc()),
+                    BlocProvider<SafeScreenBloc>(
+                        create: (context) =>
+                            SafeScreenBloc()..add(IsDataIsThere())),
                   ],
                   child: const SafeScreen(),
                 ));
